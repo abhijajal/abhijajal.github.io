@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
+
 <title>Abhishek Jajal</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+
 <style>
 body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 .w3-row-padding img {margin-bottom: 12px}
@@ -16,7 +20,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 /* Remove margins from "page content" on small screens */
 @media only screen and (max-width: 600px) {#main {margin-left: 0}}
 </style>
-<body class="w3-black">
+<body onload="readdata()" class="w3-black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
@@ -30,7 +34,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <p>ABOUT</p>
   </a>
   <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-eye w3-xxlarge"></i>
+    <i class="fa fa-folder w3-xxlarge"></i>
     <p>PROJECTS</p>
   </a>
   <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
@@ -44,7 +48,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
   <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
     <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
     <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#photos" class="w3-bar-item w3-button" style="width:25% !important">PHOTOS</a>
+    <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
     <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
   </div>
 </div>
@@ -83,152 +87,65 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <h2 class="w3-text-light-grey">My Projects</h2>
     <hr style="width:200px" class="w3-opacity">
 
-    <div class="w3-row-padding" style="margin:0 -16px">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">News World</li>
-          News World is a website which presents news from 70 different news providers using News API with some advance features like "speak news", "favorites" and "Digital Assistant (api.ai)". User Authentication, Database and Web hosting is done on firebase.          
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-             <a href="news world.html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
+    
 
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Foodies</li>
-         Online Fast Food and Beverages ordering Android App using Firebase as Database.
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href="foodies.html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
-      <br>
-<!-- 1 line -->
+  
 
- <div class="w3-row-padding">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">BookStack</li>
-          A web-app for managing library books which runs on Play MVC framework
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href="bookstack.html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
 
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">The Flash</li>
-          An endless running game made in Unreal engine in which the character can move left or right, collect coins and earns points.
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href="theflash.html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
-      <br>
-<!-- 1 line -->
 
-<!-- 1 line -->
 
- <div class="w3-row-padding">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Frog Hammer</li>
-          Description          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href="froghammer.html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
+<!--Cards starts-->
+  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
+    <header class="w3-container w3-light-grey">
+      <h3>News World</h3>
+    </header>
+    <div class="w3-container" style="background: gray">
+      <hr>
+      <img src="logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
+      <p style="color: white">News World is a website which presents news from 70 different news providers using News API with some advance features like "speak news", "favorites" and "Digital Assistant (api.ai)". User Authentication, Database and Web hosting is done on firebase.</p><br>
+    </div>
+    <button class="w3-button w3-block w3-dark-grey">See More</button>
+  </div>
+<!--Cards ends-->
 
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Name</li>
-          Decriptionasjsjhajs
-          aaas
-          asj
-          asjjaskjsakjsalasjskjsaljsk
-          sjasjsakjas
-          jaskjasksj
-          asjskjsa
-          asjssjaljslkjas
-          sj
-          k
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href=".html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
-<!-- 1 line -->
+<!--Cards starts-->
+  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
+    <header class="w3-container w3-light-grey">
+      <h3>News World</h3>
+    </header>
+    <div class="w3-container" style="background: gray">
+      <hr>
+      <img src="logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
+      <p style="color: white">News World is a website which presents news from 70 different news providers using News API with some advance features like "speak news", "favorites" and "Digital Assistant (api.ai)". User Authentication, Database and Web hosting is done on firebase.</p><br>
+    </div>
+    <button class="w3-button w3-block w3-dark-grey">See More</button>
+  </div>
+<!--Cards ends-->
 
-<!-- 1 line -->
 
- <div class="w3-row-padding">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Name</li>
-          Description
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href=".html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
-
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Name</li>
-          Decription
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href=".html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
-<!-- 1 line -->
-
-<!-- 1 line -->
-
- <div class="w3-row-padding">
-      <div class="w3-half w3-margin-bottom">
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Name</li>
-          Description
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href=".html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
-
-        <ul class="w3-ul w3-white w3-center w3-opacity w3-hover-opacity-off">
-          <li class="w3-dark-grey w3-xlarge w3-padding-32">Name</li>
-          Decription
-          <li class="w3-light-grey w3-padding-24" style="float: right;">
-            <a href=".html"><button class="w3-button w3-white w3-padding-large w3-hover-black">See More</button></a>
-          </li>
-        </ul>
-      </div>
-<!-- 1 line -->
-
+</div>
+</div>
 
 
     <!-- End Grid/Pricing tables -->
-    </div>
-  </div>
+
     
   
   <!-- Portfolio Section -->
+  <br><br><br><br><br><br><br><br><br><br><br><br>
   <div class="w3-padding-64 w3-content" id="photos">
     <h2 class="w3-text-light-grey">My Photos</h2>
     <hr style="width:200px" class="w3-opacity">
 
     <!-- Grid for photos -->
-    <div class="w3-row-padding" style="margin:0 -16px">
+    <div class="w3-row-padding" style="margin:0 -16px;display: invisible">
       <div class="w3-half">
         <img src="abhi.png" style="width:100%">
-        <img src="abhi.png" style="width:50%">
-        <img src="abhi.png" style="width:80%">
-      </div>
+       </div>
 
       <div class="w3-half">
         <img src="abhi.png" style="width:70%">
-        <img src="abhi.png" style="width:60%">
-        <img src="abhi.png" style="width:10%">
-        <img src="abhi.pngs" style="width:20%">
+       
       </div>
     <!-- End photo grid -->
     </div>
@@ -241,7 +158,7 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 7740 McCallum Blvd, Apt 218, Dallas, Texas 75252-7549</p>
+      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 7740 McCallum Blvd, Dallas, Texas 75252-7549</p>
       <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +1 4693806357</p>
       <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: abhijajal@gmail.com</p>
     </div><br>
