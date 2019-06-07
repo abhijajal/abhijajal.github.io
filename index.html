@@ -42,6 +42,39 @@ body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyAq-KhiO-mW3Pe2dJjgYK2xmrruDgSiEl0",
+    authDomain: "abhijajal-github.firebaseapp.com",
+    databaseURL: "https://abhijajal-github.firebaseio.com",
+    projectId: "abhijajal-github",
+    storageBucket: "abhijajal-github.appspot.com",
+    messagingSenderId: "294624719174",
+    appId: "1:294624719174:web:77c99e9740c7bed9"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+
+<script type="text/javascript" src="index.js"></script>
+
+
+
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
@@ -77,8 +110,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <div class="w3-padding-large" id="main">
   <!-- Header/Home -->
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Abhishek Jajal.</h1>
-    <p>Software Developer and a Data Science Enthusiast</p>
+    <h1 class="w3-jumbo" id="name"></h1>
+    <p id="tagLine"></p>
     <img src="abhi.png" alt="boy" class="w3-image" width="250" height="650">
   </header>
 
@@ -86,16 +119,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
     <h2 class="w3-text-light-grey">About Me</h2>
     <hr style="width:200px" class="w3-opacity">
-    <p>I am currently pursuing my Masters in Computer Science (Data Science Track) at The University of Texas at Dallas.
-      Working as a Grader of Machine Learning Graduate Course. 
+    <p id="aboutMe">
     </p>
     <h3 class="w3-padding-16 w3-text-light-grey">My Skills</h3>
-    <ul>
-    <li>● Android </li><li>● Java </li><li>● JavaScript </li><li>● JQuery </li><li>● C </li><li>● C++</li><li>● Python </li><li>● Unity3D </li><li>● HTML </li><li>● CSS </li><li>● MySQL </li><li>● SQL Lite</li><li>● AngularJS </li><li>● PHP </li><li>● R </li><li>● React </li><li>● C# </li>
+    <ul id="skillList">
+   
     </ul>
   
-    <a href="Resume.doc" target="_blank" style="display: inline-block;">
-        <button class="w3-button w3-light-grey w3-padding-large w3-section" onclick="Resume.doc">
+    <a id="resumeUrl" href="" target="_blank" style="display: inline-block;">
+        <button class="w3-button w3-light-grey w3-padding-large w3-section" >
           <i class="fa fa-download"></i> Download Resume
         </button>
     </a>
@@ -108,163 +140,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <hr style="width:200px" class="w3-opacity">
 
     
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>FreshNGreen</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/freshngreen/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">An online grocery store where user can login, add/remove items to/from the cart, search and filter through various items, see the items description, purchase history and payment receipt. Admin users can add new items, delete (soft delete) items, update items, check inventory. MEAN stack (MongoDb, Express, React, NodeJS).</p><br>
-    </div>
-    <a href="projects/freshngreen.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-  
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>BookStore</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/bookstack/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">BookStore is a book management system developed usig PHP, HTML, CSS and MySql, Where you can search, checkout, checkin, pay fines and also add new users.</p><br>
-    </div>
-    <a href="projects/bookstore.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>News World</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/newsworld/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">News World is a website which presents news from 70 different news providers using News API with some advance features like "speak news", "favorites" and "Digital Assistant (api.ai)". User Authentication, Database and Web hosting is done on firebase.</p><br>
-    </div>
-    <a href="projects/newsworld.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>Foodies</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/foodies/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">Online Fast Food and Beverages ordering Android App using Firebase as Database.</p><br>
-    </div>
-    <a href="projects/foodies.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>BookStack</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/bookstack/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">A web-app for managing library books which runs on Play MVC framework.</p><br>
-    </div>
-    <a href="projects/bookstack.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>The Flash</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/theflash/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">An endless running game made in Unreal engine in which the character can move left or right, collect coins and earns points.</p><br>
-    </div>
-    <a href="projects/theflash.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>Frog Hammer</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/froghammer/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">It is a digital version of ‘frog hammer arcade game’ developed in C++.</p><br>
-    </div>
-    <a href="projects/froghammer.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>Happy Birthday Buddy</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/happybirthdaybuddy/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">It is an android app, developed in Unity3d which uses Vuforia sdk to create an Augmented Reality Birthday experience.</p><br>
-    </div>
-    <a href="projects/happybirthdaybuddy.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>MCG</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/mcg/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">It is an android application which asks for the data of various customers and stores it. SQL Lite is used as database. It also has features like search by customer name, backup and restore of database.</p><br>
-    </div>
-    <a href="projects/mcg.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>Back\Slash</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/backslash/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">It is an android text editor app. It provides android users with basic text editing options.</p><br>
-    </div>
-    <a href="projects/backslash.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
-
-<!--Cards starts-->
-  <div class="w3-card-4" style="width:100%;margin-bottom:25px">
-    <header class="w3-container w3-light-grey">
-      <h3>Attendee+</h3>
-    </header>
-    <div class="w3-container" style="background: gray">
-      <hr>
-      <img src="projects/attendee/logo.png" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">
-      <p style="color: white">Its an android app, which provides an attendance list of students. One can take attendance easily by just checking out the check-boxes, then the list of present students is copied to the clipboard and it can be shared easily to anyone.</p><br>
-    </div>
-    <a href="projects/attendee.html"><button class="w3-button w3-block w3-dark-grey">See More</button></a>
-  </div>
-<!--Cards ends-->
 
 
 </div>
@@ -302,17 +177,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <hr style="width:200px" class="w3-opacity">
 
     <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> 7740 McCallum Blvd, Apt 218, Dallas, Texas 75252-7549</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +1 4693806357</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: abhijajal@gmail.com</p>
+      <p id="address"><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> </p>
+      <p id="phone"><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> </p>
+      <p id="email"><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> </p>
     </div><br>
-    <a href="https://www.facebook.com/abhijajal"><i class="fa fa-facebook-official w3-text-white w3-xxxlarge w3-hover-opacity w3-margin-right"></i></a>
+    <a id="facebook" href="" target="_blank"><i class="fa fa-facebook-official w3-text-white w3-xxxlarge w3-hover-opacity w3-margin-right"></i></a>
     &nbsp&nbsp
-    <a href="https://www.linkedin.com/in/abhijajal/"><i class="fa fa-linkedin w3-xxxlarge w3-text-white w3-hover-opacity w3-margin-right"></i></a>
+    <a id="linkedIn" href="" target="_blank"><i class="fa fa-linkedin w3-xxxlarge w3-text-white w3-hover-opacity w3-margin-right"></i></a>
 
     <p>Lets get in touch. Send me a message:</p>
 
-    <form action="https://formspree.io/abhijajal@gmail.com" method="POST">
+    <form id="formAction" action="" method="POST">
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
       <p><input class="w3-input w3-padding-16" type="email" placeholder="Email" required name="Email"></p>
       <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
