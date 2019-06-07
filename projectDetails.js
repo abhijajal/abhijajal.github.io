@@ -14,13 +14,14 @@ projectsRef.once('value').then(function(snapshot) {
   $('#desc').text(snapshot.val().desc);
   type=snapshot.val().type;
   $('#logo').attr("src", snapshot.val().logo);
-});
 
-var snapRef = firebaseDb.ref('/projects/'+projectId+'/snaps');
+  var snapRef = firebaseDb.ref('/projects/'+projectId+'/snaps');
 snapRef.on('child_added', function(data) {
 	if(type=="mob")
 	{
-		$('#web').append('<img src="'+data.val()+'" style="width: 275px">')	
+		$('#web').append('<img src="'+data.val()+'" style="width: 275px">')
+		$('#web').css( { marginLeft : "175px" } )
+
 	}
 	else
 	{
@@ -29,6 +30,10 @@ snapRef.on('child_added', function(data) {
 	$('#mob').append('<img src="'+data.val()+'" style="width: 100%">')
 		
 });
+
+});
+
+  
  
 
 
