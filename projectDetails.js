@@ -11,7 +11,7 @@ var type;
 
 projectsRef.once('value').then(function(snapshot) {
   $('#name').text(snapshot.val().name);
-  $('#name').append('<h3><a style="margin-bottom" id="github" href="'+snapshot.val().github+'" target="_blank"><i class="fa fa-github w3-xxxlarge w3-text-white w3-hover-opacity w3-margin-right"></i></a></h3>')
+  $('#git').html('<h1><a style="margin-bottom" id="github" href="'+snapshot.val().github+'" target="_blank"><i class="fa fa-github w3-xxxlarge w3-text-white w3-hover-opacity w3-margin-right"></i></a></h1>')
   $('#desc').text(snapshot.val().desc);
   type=snapshot.val().type;
   $('#logo').attr("src", snapshot.val().logo);
