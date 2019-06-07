@@ -27,7 +27,8 @@ firebaseDb.ref('/contact').once('value').then(function(snapshot) {
 	$('#email').append(snapshot.val().email)
 	$('#facebook').attr("href", snapshot.val().facebook);
 	$('#linkedIn').attr("href", snapshot.val().linkedIn);
-	$('#formAction').attr("action", snapshot.val().formAction);
+	$('#github').attr("href", snapshot.val().github);
+  $('#formAction').attr("action", snapshot.val().formAction);
 });
  
 
@@ -38,7 +39,7 @@ $("#projects").append(
 
   '<div class="w3-card-4" style="width:100%;margin-bottom:25px">'
   +'<header class="w3-container w3-light-grey">'
-  +'    <h3>'+data.val().name+'</h3>'
+  +'    <h3>'+data.val().name+'&nbsp;&nbsp;<a style="margin-bottom" id="github" href="'+data.val().github+'" target="_blank"><i class="fa fa-github w3-xxxlarge w3-text-black w3-hover-opacity w3-margin-right"></i></a></h3>' 
   +'  </header>'
   +'  <div class="w3-container" style="background: gray">'
   +'    <hr>'
