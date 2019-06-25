@@ -20,15 +20,15 @@ projectsRef.once('value').then(function(snapshot) {
 snapRef.on('child_added', function(data) {
 	if(type=="mob")
 	{
-		$('#web').append('<img src="'+data.val()+'" style="width: 275px">')
+		$('#web').append('<img src="'+data.val()+'" style="width: 275px; padding:10px;">')
 		$('#web').css( { marginLeft : "175px" } )
 
 	}
 	else
 	{
-		$('#web').append('<img src="'+data.val()+'" style="width: 100%">')
+		$('#web').append('<img src="'+data.val()+'" style="width: 100%; padding:10px;">')
 	}
-	$('#mob').append('<img src="'+data.val()+'" style="width: 100%">')
+	$('#mob').append('<img src="'+data.val()+'" style="width: 100%; padding:10px;">')
 		
 });
 
