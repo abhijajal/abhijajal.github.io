@@ -63,7 +63,6 @@ employmentRef.on('child_added', function(data) {
   +'    <h3>'+data.val().title+'&nbsp;&nbsp;@&nbsp;<a style="margin-bottom" href="'+data.val().url+'" target="_blank">'+data.val().name+'</a></h3>' 
   +'  </header>'
   +'  <div class="w3-container" style="background: gray">'
-  +'    <hr>'
   +'    <p style="color: white">'+data.val().duties+'</p><br>'
   +'  </div>'
   +'    <div class="w3-block w3-dark-grey" style="text-align:center">'+data.val().location+'&nbsp;&nbsp;|&nbsp;&nbsp;'+data.val().duration+'</div>'  
@@ -80,12 +79,15 @@ additionalExpRef.on('child_added', function(data) {
   +'    <h3>'+data.val().title+'&nbsp;&nbsp;@&nbsp;'+data.val().name+'</h3>' 
   +'  </header>'
   +'  <div class="w3-container" style="background: gray">'
-  +'    <hr>'
   +'    <p style="color: white">'+data.val().duties+'</p><br>'
   +'  </div>'
   +'    <div class="w3-block w3-dark-grey" style="text-align:center">'+data.val().duration+'</div>'  
   +'</div>');
 
+});
+
+$( "#addExp" ).click(function() {
+  $("#additionalExp").toggle();
 });
 
 
