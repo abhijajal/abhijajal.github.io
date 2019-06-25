@@ -53,7 +53,41 @@ $("#projects").append(
   +'</div>');
 
 });
- 
+
+var employmentRef = firebaseDb.ref('/employment');
+employmentRef.on('child_added', function(data) {
+
+  $("#employment").append(
+  '<div class="w3-card-4" style="width:100%;margin-bottom:25px">'
+  +'<header class="w3-container w3-light-grey">'
+  +'    <h3>'+data.val().title+'&nbsp;&nbsp;@&nbsp;<a style="margin-bottom" href="'+data.val().url+'" target="_blank">'+data.val().name+'</a></h3>' 
+  +'  </header>'
+  +'  <div class="w3-container" style="background: gray">'
+  +'    <hr>'
+  +'    <p style="color: white">'+data.val().duties+'</p><br>'
+  +'  </div>'
+  +'    <div class="w3-block w3-dark-grey" style="text-align:center">'+data.val().location+'&nbsp;&nbsp;|&nbsp;&nbsp;'+data.val().duration+'</div>'  
+  +'</div>');
+
+});
+
+var additionalExpRef = firebaseDb.ref('/additionalExp');
+additionalExpRef.on('child_added', function(data) {
+  $("#additionalExp").append(
+
+  '<div class="w3-card-4" style="width:100%;margin-bottom:25px">'
+  +'<header class="w3-container w3-light-grey">'
+  +'    <h3>'+data.val().title+'&nbsp;&nbsp;@&nbsp;'+data.val().name+'</h3>' 
+  +'  </header>'
+  +'  <div class="w3-container" style="background: gray">'
+  +'    <hr>'
+  +'    <p style="color: white">'+data.val().duties+'</p><br>'
+  +'  </div>'
+  +'    <div class="w3-block w3-dark-grey" style="text-align:center">'+data.val().duration+'</div>'  
+  +'</div>');
+
+});
+
 
   
 });
