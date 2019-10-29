@@ -43,7 +43,7 @@ $("#projects").append(
   +'  </header>'
   +'  <div class="w3-container" style="background: gray">'
   +'    <hr>'
-  +'    <img src="'+data.val().logo+'" alt="Avatar" class="w3-left w3-margin-right" style="width:100px">'
+  +'    <img src="'+data.val().logo+'" class="w3-left w3-margin-right" style="width:100px">'
   +'    <p style="color: white">'+data.val().desc+'</p><br>'
   +'  </div>'
   +'<form action="projectDetails.html" method="get">'
