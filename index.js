@@ -35,23 +35,34 @@ firebaseDb.ref('/contact').once('value').then(function(snapshot) {
 
  var projectsRef = firebaseDb.ref('/projects');
 projectsRef.on('child_added', function(data) {
-$("#projects").append(
 
-  '<div class="w3-card-4" style="width:100%;margin-bottom:25px">'
+  part1=   '<div class="w3-card-4" style="width:100%;margin-bottom:25px">'
   +'<header class="w3-container w3-light-grey">'
   +'    <h3>'+data.val().name+'&nbsp;&nbsp;<a style="margin-bottom" href="'+data.val().github+'" target="_blank"><i class="fa fa-github w3-xxxlarge w3-text-black w3-hover-opacity w3-margin-right"></i></a></h3>' 
   +'  </header>'
   +'  <div class="w3-container" style="background: gray">'
-  +'    <hr>'
-  +'    <img src="'+data.val().logo+'" class="w3-left w3-margin-right" style="width:100px">'
-  +'    <p style="color: white">'+data.val().desc+'</p><br>'
+  +'    <hr>' 
+  
+if(data.val().logo)
+{
+  part2 = ' <img src="'+data.val().logo+'" alt="Avatar" class="w3-left w3-margin-right" style="width:100px"> '  
+}
+else {
+  part2 = ''
+}
+    
+
+  part3 ='    <p style="color: white">'+data.val().desc+'</p><br>'
   +'  </div>'
   +'<form action="projectDetails.html" method="get">'
   +'<input type="text" style="display:none" name="projectId" value="'+data.key+'">'
   +'<input type="submit" class="w3-button w3-block w3-dark-grey" value="See More">'
   +'</form>'
-  +'</div>');
+  +'</div>';
 
+$("#projects").append(part1+part2+part3);
+
+  
 });
 
 var employmentRef = firebaseDb.ref('/employment');
