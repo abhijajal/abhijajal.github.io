@@ -15,6 +15,7 @@ projectsRef.once('value').then(function(snapshot) {
   $('#desc').text(snapshot.val().desc);
   type=snapshot.val().type;
   $('#logo').attr("src", snapshot.val().logo);
+  $('#logo').show();
 
   var snapRef = firebaseDb.ref('/projects/'+projectId+'/snaps');
 snapRef.on('child_added', function(data) {
