@@ -14,9 +14,14 @@ projectsRef.once('value').then(function(snapshot) {
   $('#git').html('<h1><a style="margin-bottom" id="github" href="'+snapshot.val().github+'" target="_blank"><i class="fa fa-github w3-xxxlarge w3-text-white w3-hover-opacity w3-margin-right"></i></a></h1>')
   $('#desc').text(snapshot.val().desc);
   type=snapshot.val().type;
-  $('#logo').attr("src", snapshot.val().logo);
-  $('#logo').show();
+  var imgUrl=snapshot.val().logo
+  if(imgUrl!=undefined){
+	  $('#logo').attr("src", imgUrl);
+	  $('#logo').show();
 
+  }
+
+  
   var snapRef = firebaseDb.ref('/projects/'+projectId+'/snaps');
 snapRef.on('child_added', function(data) {
 	if(type=="mob")
